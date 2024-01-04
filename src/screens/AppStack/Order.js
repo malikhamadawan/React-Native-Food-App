@@ -105,7 +105,6 @@ const Order = () => {
           placeholderTextColor="grey"
         />
       </View>
-
       <TouchableOpacity
         style={{
           width: '90%',

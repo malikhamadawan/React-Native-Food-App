@@ -10,7 +10,7 @@ function MainStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Auth"
+        initialRouteName="App"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="App" component={App} />
         <Stack.Screen name="Auth" component={Auth} />
