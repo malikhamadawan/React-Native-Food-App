@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/self-closing-comp */
 import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import ImagePicker from 'react-native-image-crop-picker';

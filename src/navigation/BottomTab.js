@@ -5,6 +5,8 @@ import Setting from '../screens/AppStack/Setting';
 import OrderScrollDown from '../screens/AppStack/OrderScrollDown';
 import SelectOrder from '../screens/AppStack/SelectOrder';
 import Map from '../screens/AppStack/Map';
+import PlaceOrder from '../screens/AppStack/PlaceOrder';
+import PaymentType from '../screens/AppStack/PaymentType';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +18,8 @@ const BottomTab = () => {
       <Tab.Screen name="Profile" component={Setting} />
       <Tab.Screen name="SelectOrder" component={SelectOrder} />
       <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="PlaceOrder" component={PlaceOrder} />
+      <Tab.Screen name="PaymentType" component={PaymentType} />
     </Tab.Navigator>
   );
 };

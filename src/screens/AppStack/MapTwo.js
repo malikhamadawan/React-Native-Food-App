@@ -8,8 +8,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+import InsetShadow from 'react-native-inset-shadow';
 
-const Map = () => {
+const MapTwo = () => {
   const [count, setCount] = useState(1);
   console.log('count:', count);
   const [count1, setCount1] = useState(1);
@@ -199,43 +200,54 @@ const Map = () => {
         </TouchableOpacity>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingLeft: 40,
-            width: '30%',
             marginTop: 20,
           }}>
-          <TouchableOpacity
-            onPress={() => {
-              setCount(count - 1);
-            }}
-            disabled={count === 0 ? true : false}>
-            <Image
-              source={require('../../assets/minus1.png')}
-              style={{
-                height: 18,
-                width: 18,
-              }}
-            />
-          </TouchableOpacity>
-          <Text
-            style={{
-              fontSize: 13,
+          <InsetShadow
+            bottom={false}
+            shadowRadius={5}
+            elevation={7}
+            containerStyle={{
+              height: 20,
+              alignItems: 'center',
+              backgroundColor: '#D6FFD9',
+              borderRadius: 30,
+              flexDirection: 'row',
+              marginLeft: 40,
+              width: 89,
+              justifyContent: 'space-between',
             }}>
-            {count}
-          </Text>
-          <TouchableOpacity
-            onPress={() => {
-              setCount(count + 1);
-            }}>
-            <Image
-              source={require('../../assets/plus1.png')}
-              style={{
-                height: 18,
-                width: 18,
+            <TouchableOpacity
+              onPress={() => {
+                setCount(count - 1);
               }}
-            />
-          </TouchableOpacity>
+              disabled={count === 0 ? true : false}>
+              <Text
+                style={{
+                  color: 'black',
+                }}>
+                {' '}
+                -{' '}
+              </Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 13,
+              }}>
+              {count}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                setCount(count + 1);
+              }}>
+              <Text
+                style={{
+                  color: 'black',
+                }}>
+                {' '}
+                +{' '}
+              </Text>
+            </TouchableOpacity>
+          </InsetShadow>
         </View>
       </View>
       <View
@@ -270,47 +282,58 @@ const Map = () => {
         </TouchableOpacity>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingLeft: 40,
-            width: '30%',
-            marginTop: 32,
+            marginTop: 36,
           }}>
-          <TouchableOpacity
-            onPress={() => {
-              setCount1(count1 - 1);
-            }}
-            disabled={count1 === 0 ? true : false}>
-            <Image
-              source={require('../../assets/minus1.png')}
-              style={{
-                height: 18,
-                width: 18,
-              }}
-            />
-          </TouchableOpacity>
-          <Text
-            style={{
-              fontSize: 13,
+          <InsetShadow
+            bottom={false}
+            shadowRadius={5}
+            elevation={7}
+            containerStyle={{
+              height: 20,
+              alignItems: 'center',
+              backgroundColor: '#D6FFD9',
+              borderRadius: 30,
+              flexDirection: 'row',
+              marginLeft: 40,
+              width: 89,
+              justifyContent: 'space-between',
             }}>
-            {count1}
-          </Text>
-          <TouchableOpacity
-            onPress={() => {
-              setCount1(count1 + 1);
-            }}>
-            <Image
-              source={require('../../assets/plus1.png')}
-              style={{
-                height: 18,
-                width: 18,
+            <TouchableOpacity
+              onPress={() => {
+                setCount1(count1 - 1);
               }}
-            />
-          </TouchableOpacity>
+              disabled={count1 === 0 ? true : false}>
+              <Text
+                style={{
+                  color: 'black',
+                }}>
+                {' '}
+                -{' '}
+              </Text>
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 13,
+              }}>
+              {count1}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                setCount1(count1 + 1);
+              }}>
+              <Text
+                style={{
+                  color: 'black',
+                }}>
+                {' '}
+                +{' '}
+              </Text>
+            </TouchableOpacity>
+          </InsetShadow>
         </View>
       </View>
     </View>
   );
 };
 
-export default Map;
+export default MapTwo;
