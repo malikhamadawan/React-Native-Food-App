@@ -6,10 +6,62 @@ import {
   Platform,
   Text,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import React from 'react';
 
 const SelectOrder = () => {
+  const data = [
+    {
+      title: 'Triple Chocolate Brownie',
+      id: 0,
+      image: require('../../assets/brownie.png'),
+      price: 'Rs 650',
+      dilevery: 'Free dilevery',
+    },
+    {
+      title: 'Sweet And Spicy Pastry',
+      id: 1,
+      image: require('../../assets/pastry1.png'),
+      price: 'Rs 400',
+      dilevery: 'Rs 120 For dilevery',
+    },
+    {
+      title: 'Creamy Kheer',
+      id: 2,
+      image: require('../../assets/kheer.jpeg'),
+      price: 'Rs 750',
+      dilevery: 'Rs 150 For dilevery',
+    },
+    {
+      title: 'Gajar Halwa',
+      id: 3,
+      image: require('../../assets/gajarHalwa.jpeg'),
+      price: 'Rs 950',
+      dilevery: 'Rs 200 For dilevery',
+    },
+    {
+      title: 'Barbie Cake',
+      id: 4,
+      image: require('../../assets/barbieCake.jpeg'),
+      price: 'Rs 2200',
+      dilevery: 'Rs 250 For dilevery',
+    },
+    {
+      title: 'Mini Chocolate Cake',
+      id: 5,
+      image: require('../../assets/miniChocolateCake.jpeg'),
+      price: 'Rs 550',
+      dilevery: 'Rs 100 For dilevery',
+    },
+    {
+      title: 'Ranbow Sprinkle Cake',
+      id: 6,
+      image: require('../../assets/ranbowSprinkleCake.jpeg'),
+      price: 'Rs 1950',
+      dilevery: 'Rs 200 For dilevery',
+    },
+  ];
   return (
     <View
       style={{
@@ -279,6 +331,88 @@ const SelectOrder = () => {
         </TouchableOpacity>
       </View>
       <Image source={require('../../assets/rectangle6.png')} style={{}} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: 10,
+          paddingVertical: 5,
+        }}>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: '500',
+          }}>
+          All Menu
+        </Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: '500',
+          }}>
+          Cakes
+        </Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: '500',
+          }}>
+          Pastries
+        </Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: '500',
+          }}>
+          Sandwich
+        </Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: '500',
+          }}>
+          Drinks
+        </Text>
+      </View>
+      <FlatList
+        data={data}
+        renderItem={({item}) => (
+          <TouchableOpacity
+            style={{
+              // backgroundColor: 'red',
+              marginTop: 10,
+              flexDirection: 'row',
+              paddingHorizontal: 10,
+            }}>
+            <Image
+              source={item.image}
+              style={{
+                height: 69,
+                width: 69,
+                borderRadius: 10,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                fontWeight: '500',
+                textAlign: 'left',
+                marginTop: 10,
+                marginLeft: 5,
+              }}>
+              {item.title}
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '200',
+                }}>
+                {'\n'}
+                {item.price} {item.dilevery}
+              </Text>
+            </Text>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 };
