@@ -10,7 +10,7 @@ import {
 import React, {useState} from 'react';
 import InsetShadow from 'react-native-inset-shadow';
 
-const MapTwo = () => {
+const MapTwo = ({navigation}) => {
   const [count, setCount] = useState(1);
   console.log('count:', count);
   const [count1, setCount1] = useState(1);
@@ -174,6 +174,7 @@ const MapTwo = () => {
           marginTop: 10,
         }}>
         <TouchableOpacity
+          onPress={() => navigation.navigate('App', {screen: 'AddCartTwo'})}
           style={{
             height: 35,
             width: 100,

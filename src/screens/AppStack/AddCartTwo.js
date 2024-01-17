@@ -12,7 +12,7 @@ import React, {useState} from 'react';
 import InsetShadow from 'react-native-inset-shadow';
 // import {cleanSingle} from 'react-native-image-crop-picker';
 
-const AddCartTwo = () => {
+const AddCartTwo = ({navigation}) => {
   const [button, setButton] = useState(false);
   const [count, setCount] = useState(1);
   console.log('count:', count);
@@ -57,7 +57,7 @@ const AddCartTwo = () => {
       count: 0,
     },
     {
-      title: 'Barbie Cake',
+      title: 'Strawberry Mojito',
       id: 4,
       image: require('../../assets/strawberry2.png'),
       price: 'Rs 2200',
@@ -391,7 +391,10 @@ const AddCartTwo = () => {
               style={{
                 marginLeft: 7,
               }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('App', {screen: 'PlaceOrderTwo'})
+                }>
                 <Text
                   style={{
                     color: 'black',

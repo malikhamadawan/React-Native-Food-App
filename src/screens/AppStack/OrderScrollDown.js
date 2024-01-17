@@ -11,7 +11,7 @@ import {
   Platform,
 } from 'react-native';
 
-const OrderScrollDown = () => {
+const OrderScrollDown = ({navigation}) => {
   const newData = [
     {
       image: require('../../assets/bluebarry1.png'),
@@ -160,15 +160,18 @@ const OrderScrollDown = () => {
             width: '20%',
             height: 67,
           }}>
-          <Image
-            source={require('../../assets/ellipse.png')}
-            resizeMode="contain"
-            style={{
-              width: 67,
-              height: 67,
-              alignSelf: 'flex-end',
-            }}
-          />
+          <TouchableOpacity
+            onPress={() => navigation.navigate('App', {screen: 'Setting'})}>
+            <Image
+              source={require('../../assets/ellipse.png')}
+              resizeMode="contain"
+              style={{
+                width: 67,
+                height: 67,
+                alignSelf: 'flex-end',
+              }}
+            />
+          </TouchableOpacity>
         </View>
       </View>
       <View
@@ -203,6 +206,7 @@ const OrderScrollDown = () => {
         data={newData}
         renderItem={({item}) => (
           <TouchableOpacity
+            onPress={() => navigation.navigate('App', {screen: 'SelectOrder'})}
             style={{
               justifyContent: 'center',
               width: '50%',

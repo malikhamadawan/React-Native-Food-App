@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Order = () => {
+const Order = ({navigation}) => {
   return (
     <View
       style={{
@@ -66,16 +66,19 @@ const Order = () => {
             width: '20%',
             height: 67,
           }}>
-          <Image
-            source={require('../../assets/ellipse.png')}
-            resizeMode="contain"
-            style={{
-              width: 67,
-              height: 67,
+          <TouchableOpacity
+            onPress={() => navigation.navigate('App', {screen: 'Setting'})}>
+            <Image
+              source={require('../../assets/ellipse.png')}
+              resizeMode="contain"
+              style={{
+                width: 67,
+                height: 67,
 
-              alignSelf: 'flex-end',
-            }}
-          />
+                alignSelf: 'flex-end',
+              }}
+            />
+          </TouchableOpacity>
         </View>
       </View>
       <View
@@ -196,6 +199,9 @@ const Order = () => {
           Feature Partners
         </Text>
         <Text
+          onPress={() =>
+            navigation.navigate('App', {screen: 'OrderScrollDown'})
+          }
           style={{
             fontSize: 25,
             fontWeight: '300',

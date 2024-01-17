@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-const Map = () => {
+const Map = ({navigation}) => {
   const [count, setCount] = useState(1);
   console.log('count:', count);
   const [count1, setCount1] = useState(1);
@@ -40,13 +40,18 @@ const Map = () => {
               alignItems: 'center',
               marginLeft: 10,
             }}>
-            <Image
-              source={require('../../assets/closeRingIcon.png')}
-              style={{
-                height: 17,
-                width: 17,
-              }}
-            />
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('App', {screen: 'SelectOrder'})
+              }>
+              <Image
+                source={require('../../assets/closeRingIcon.png')}
+                style={{
+                  height: 17,
+                  width: 17,
+                }}
+              />
+            </TouchableOpacity>
           </View>
           <View
             style={{
@@ -173,6 +178,7 @@ const Map = () => {
           marginTop: 10,
         }}>
         <TouchableOpacity
+          onPress={() => navigation.navigate('App', {screen: 'AddCart'})}
           style={{
             height: 35,
             width: 100,
@@ -244,6 +250,7 @@ const Map = () => {
           alignItems: 'center',
         }}>
         <TouchableOpacity
+          onPress={() => navigation.navigate('App', {screen: 'PlaceOrder'})}
           style={{
             height: 35,
             width: 100,

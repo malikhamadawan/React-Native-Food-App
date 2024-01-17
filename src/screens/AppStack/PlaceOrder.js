@@ -2,7 +2,7 @@
 import {View, Text, Image, Platform, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const PlaceOrder = () => {
+const PlaceOrder = ({navigation}) => {
   return (
     <View
       style={{
@@ -193,30 +193,33 @@ const PlaceOrder = () => {
           marginTop: 15,
         }}
       />
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          // alignItems: 'center',
-          paddingLeft: 40,
-          paddingRight: 20,
-          marginTop: 10,
-        }}>
-        <Text
+      <TouchableOpacity
+        onPress={() => navigation.navigate('App', {screen: 'PaymentType'})}>
+        <View
           style={{
-            fontSize: 20,
-            color: '#024220',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            paddingLeft: 40,
+            paddingRight: 20,
+            marginTop: 10,
           }}>
-          Payment Method
-        </Text>
-        <Image
-          source={require('../../assets/rightarrow1.png')}
-          style={{
-            height: 24,
-            width: 24,
-          }}
-        />
-      </View>
+          <Text
+            style={{
+              fontSize: 20,
+              color: '#024220',
+            }}>
+            Payment Method
+          </Text>
+          <Image
+            source={require('../../assets/rightarrow1.png')}
+            style={{
+              height: 24,
+              width: 24,
+            }}
+          />
+        </View>
+      </TouchableOpacity>
       <View
         style={{
           justifyContent: 'center',

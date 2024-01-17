@@ -2,7 +2,7 @@
 import {View, Text, Image, Platform, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const PlaceOrderTwo = () => {
+const PlaceOrderTwo = ({navigation}) => {
   return (
     <View
       style={{
@@ -263,6 +263,7 @@ const PlaceOrderTwo = () => {
           marginTop: 60,
         }}>
         <TouchableOpacity
+          onPress={() => navigation.navigate('App', {screen: 'PaymentTypeTwo'})}
           style={{
             backgroundColor: '#024220',
             height: 65.4,

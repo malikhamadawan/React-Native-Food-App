@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Mojito = () => {
+const Mojito = ({navigation}) => {
   const data = [
     {
       title: 'Triple Chocolate Brownie',
@@ -187,14 +187,17 @@ const Mojito = () => {
           48 Dehiwala Rd, Borelesgamuwa, India SA 10290 {'\n'}
           Tap for hours, info, and more
         </Text>
-        <Image
-          source={require('../../assets/arrow12.png')}
-          style={{
-            height: 12,
-            width: 12,
-            marginRight: 20,
-          }}
-        />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('App', {screen: 'MapTwo'})}>
+          <Image
+            source={require('../../assets/arrow12.png')}
+            style={{
+              height: 12,
+              width: 12,
+              marginRight: 20,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <View
         style={{

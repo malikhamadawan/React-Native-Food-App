@@ -11,7 +11,7 @@ import {
 import React from 'react';
 import InsetShadow from 'react-native-inset-shadow';
 
-const AddCart = () => {
+const AddCart = ({navigation}) => {
   const data = [
     {
       title: 'Triple Chocolate Brownie',
@@ -36,9 +36,9 @@ const AddCart = () => {
       dilevery: 'Rs 150 For dilevery',
     },
     {
-      title: 'Gajar Halwa',
+      title: 'Strawberry Majito',
       id: 3,
-      image: require('../../assets/gajarHalwa.jpeg'),
+      image: require('../../assets/strawberry.png'),
       price: 'Rs 950',
       dilevery: 'Rs 200 For dilevery',
     },
@@ -236,6 +236,7 @@ const AddCart = () => {
               </TouchableOpacity>
             </View> */}
             <TouchableOpacity
+              onPress={() => navigation.navigate('App', {screen: 'Mojito'})}
               style={{
                 // flex: 1,
                 alignItems: 'center',

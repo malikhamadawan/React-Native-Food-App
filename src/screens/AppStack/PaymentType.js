@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-const PaymentType = () => {
+const PaymentType = ({navigation}) => {
   const [image, setImage] = useState(false);
   console.log('image:', image);
   const [image1, setImage1] = useState(false);
@@ -323,6 +323,9 @@ const PaymentType = () => {
           marginTop: 50,
         }}>
         <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('App', {screen: 'OrderScrollDown'})
+          }
           style={{
             backgroundColor: '#024220',
             height: 65.4,
